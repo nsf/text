@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}
+
+.app-page-container {
+  perspective: 1200px;
+}
+
+.app-page {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  will-change: transform, opacity;
+  transform-origin: 50% 100% -200px;
+}
+
+.animated .app-page.enter {
+  opacity: 0;
+}
+
+.animated .app-page.enter-active {
+  opacity: 1;
+  transition-property: transform, opacity;
+  transition-duration: 0.5s;
+  transition-timing-function: ease;
+}
+
+.animated .app-page.exit {
+  opacity: 1;
+}
+
+.animated .app-page.exit-active {
+  opacity: 0;
+  transition-property: transform, opacity;
+  transition-duration: 0.5s;
+  transition-timing-function: ease;
+}
+
+.animated .app-page.enter {
+  transform: rotateY(90deg);
+}
+.animated .app-page.enter-active {
+  transform: rotateY(0);
+}
+.animated .app-page.exit {
+  transform: rotateY(0);
+}
+.animated .app-page.exit-active {
+  transform: rotateY(-90deg);
+}
+
+.animated.is-index .app-page.enter {
+  transform: rotateY(-90deg);
+}
+
+.animated.is-index .app-page.enter-active {
+  transform: rotateY(0);
+}
+
+.animated.is-index .app-page.exit {
+  transform: rotateY(0);
+}
+
+.animated.is-index .app-page.exit-active {
+  transform: rotateY(90deg);
+}
